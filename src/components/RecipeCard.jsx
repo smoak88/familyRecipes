@@ -1,35 +1,74 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Card = styled.div`
-  height: 30vh;
-  width: 20vh;
+  background-color: white;
+  width: 30vh;
+  margin: 0 auto;
   overflow: hidden;
-  box-shadow: 0px 5px 10px rbga(o, o, o, 0.25);
-  border-radius: 10px;
+  box-shadow: 0px 2px 15px black;
+  border-radius: 8px;
+  cursor: pointer;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 200ms ease-in;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:hover button {
+    background: red;
+    color: white;
+  }
 `;
-const Body = styled.div``;
-const Button = styled.button``;
+const Body = styled.div`
+  text-align: center;
+`;
+const Button = styled.button`
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  border: 2px solid red;
+  border-radius: 8px;
+  transition: all 200ms ease-in;
+`;
 
-const Image = styled.img``;
+const Image = styled.img`
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+`;
 
-const Title = styled.h2``;
+const Title = styled.h2`
+  padding: 2rem;
+`;
 
-const Description = styled.p``;
+const Description = styled.p`
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0 1rem;
+`;
 
 const RecipeCard = (props) => {
   return (
-    <Card>
-      <Body>
-        <Image src="/celebration-315079_1280.jpg"></Image>
-        <Title>Nulla posuere a mauris</Title>
-        <Description>
-          Quisque non purus vitae tortor aliquet ullamcorper non in lacus.{" "}
-        </Description>
-      </Body>
-      <Button>View Recipe</Button>
-    </Card>
+    <Link style={{ textDecoration: "none" }} to="/recipes">
+      <Card>
+        <Body>
+          <Image src="/celebration-315079_1280.jpg"></Image>
+          <Title>Chicken Pot Pie</Title>
+          <Description>
+            A delicious mixture of tender chicken and veggies cooked inside a
+            pie crust with cream of chicken.
+          </Description>
+        </Body>
+        <Button>View Recipe</Button>
+      </Card>
+    </Link>
   );
 };
 

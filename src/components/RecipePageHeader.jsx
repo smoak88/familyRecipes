@@ -24,15 +24,15 @@ const HeaderSubTitle = styled.h2`
   font-size: 5rem;
 `;
 
-const Header = () => {
+const RecipePageHeader = () => {
   return (
     <HeaderDiv>
       <HeaderText>
-        <HeaderTitle>Family Recipes</HeaderTitle>
-        <HeaderSubTitle>Pick Any Month!</HeaderSubTitle>
+        <HeaderTitle>Chicken Pot Pie</HeaderTitle>
+        <HeaderSubTitle>From the month of November!</HeaderSubTitle>
       </HeaderText>
     </HeaderDiv>
   );
 };
 
-export default Header;
+export default RecipePageHeader;
